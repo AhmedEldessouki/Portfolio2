@@ -48,9 +48,9 @@ module.exports = {
         preset: "@theme-ui/preset-funk",
       },
     },
-    `gatsby-plugin-mdx`
+    `gatsby-plugin-mdx`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

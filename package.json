@@ -24,7 +24,11 @@
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
   },
   "keywords": [
     "gatsby"
@@ -38,6 +42,17 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/un it-testing\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "eslint src/*.js --fix-dry-run"
+    ]
   },
   "repository": {
     "type": "git",
