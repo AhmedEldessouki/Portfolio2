@@ -27,7 +27,7 @@
     "eslint": "^7.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
+    "lint-staged": "8.1.7",
     "prettier": "^2.0.5"
   },
   "keywords": [
@@ -41,18 +41,14 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/un it-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/un it-testing\" && exit 1",
+    "lint": "node ./node_modules/eslint/bin/eslint . --ignore-path .gitignore"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "commit-msg": "npm run lint",
+      "pre-commit": "pretty-quick --staged"
     }
-  },
-  "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "npx prettier --write",
-      "eslint src/*.js --fix-dry-run"
-    ]
   },
   "repository": {
     "type": "git",
