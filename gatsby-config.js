@@ -55,7 +55,7 @@ module.exports = {
       resolve: 'gatsby-plugin-offline',
       options: {
         workboxConfig: {
-          globPatterns: ['src/images/gatsby-icon.png'], //my goes logo
+          globPatterns: ['src/images/gatsby-icon.png'], // my goes logo
         },
       },
     },
