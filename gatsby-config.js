@@ -7,7 +7,7 @@ module.exports = {
       {
         name: `Email`,
         link: `nemoahmed@hotmail.co.uk`,
-        location: `footer`, //Options are "all", "header", "footer"
+        location: `footer`, // Options are "all", "header", "footer"
       },
       {
         name: `linkedin`,
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-theme-ui`,
       options: {
-        preset: "@theme-ui/preset-funk",
+        preset: '@theme-ui/preset-funk',
       },
     },
     `gatsby-plugin-mdx`,
@@ -53,4 +53,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
   ],
-}
+};
