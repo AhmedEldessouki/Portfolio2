@@ -24,10 +24,13 @@
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "cypress": "^4.12.1",
     "eslint": "^7.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
@@ -44,13 +47,16 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve --port 5000",
     "clean": "gatsby clean",
+    "setup": "yarn && yarn build",
     "test": "echo \"Write tests! -> https://gatsby.dev/un it-testing\" && exit 1",
-    "lint": "node ./node_modules/eslint/bin/eslint . --ignore-path .gitignore "
+    "lint": "node ./node_modules/eslint/bin/eslint . --ignore-path .gitignore ",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
   },
   "husky": {
     "hooks": {
