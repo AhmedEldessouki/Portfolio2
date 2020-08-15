@@ -2,12 +2,6 @@
   "settings": {
     "eslint.packageManager": "yarn"
   },
-  // "import/no-extraneous-dependencies": [
-  //   "error",
-  //   {
-  //     "devDependencies": false
-  //   }
-  // ],
   "parser": "babel-eslint",
   "env": {
     "browser": true,
@@ -19,14 +13,17 @@
   "rules": {
     "arrow-parens": "off",
     "implicit-arrow-linebreak": "off",
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always"
+      }
+    ],
     "no-console": 1,
     "no-confusing-arrow": "off",
     "no-unused-vars": 1,
     "no-use-before-define": 1,
-    "no-param-reassign": ["error", { "props": false }],
     "prettier/prettier": "warn",
-    "import/order": ["warn", { "newlines-between": "always" }],
-    "react/jsx-props-no-spreading": 0,
     "react/forbid-prop-types": 0,
     "react/prop-types": 1,
     "react/require-default-props": 1,
