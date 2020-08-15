@@ -1,19 +1,13 @@
-// {
-//    " extends": ["airbnb"],
-//     "rules": {
-//         "react/jsx-filename-extension": [
-//                     1,
-//                     {
-//                       "extensions": [".js"]
-//                     }
-//                   ]
-//     }
-// }
-
 {
   "settings": {
     "eslint.packageManager": "yarn"
   },
+  // "import/no-extraneous-dependencies": [
+  //   "error",
+  //   {
+  //     "devDependencies": false
+  //   }
+  // ],
   "parser": "babel-eslint",
   "env": {
     "browser": true,
