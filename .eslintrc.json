@@ -8,8 +8,13 @@
     "node": true,
     "es6": true
   },
-  "plugins": ["prettier", "react-hooks"],
-  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "plugins": ["prettier", "react-hooks", "cypress"],
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "plugin:cypress/recommended"
+  ],
   "rules": {
     "arrow-parens": "off",
     "implicit-arrow-linebreak": "off",

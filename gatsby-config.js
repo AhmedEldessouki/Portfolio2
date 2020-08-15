@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 module.exports = {
   siteMetadata: {
     title: `Ahmed ElDessouki Portfolio `,
