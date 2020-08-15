@@ -5,9 +5,15 @@
   "version": "0.1.0",
   "author": "Ahmed ElDessouki <nemoahmed@hotmail.co.uk>",
   "dependencies": {
+    "@emotion/core": "^10.0.34",
+    "@emotion/styled": "^10.0.27",
+    "@mdx-js/mdx": "^1.6.16",
+    "@mdx-js/react": "^1.6.16",
     "gatsby": "^2.24.41",
     "gatsby-image": "^2.4.15",
-    "gatsby-plugin-manifest": "^2.4.22",
+    "gatsby-plugin-emotion": "^4.3.10",
+    "gatsby-plugin-manifest": "^2.4.23",
+    "gatsby-plugin-mdx": "^1.2.34",
     "gatsby-plugin-offline": "^3.2.23",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.26",
@@ -15,11 +21,32 @@
     "gatsby-transformer-sharp": "^2.5.12",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "npm:@hot-loader/react-dom",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "@testing-library/cypress": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
+    "babel-preset-gatsby": "^0.5.5",
+    "cypress": "^4.12.1",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-cypress": "^2.11.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "husky": "^4.2.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.4.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "react-test-renderer": "^16.13.1",
+    "react-testing-library": "^8.0.1"
   },
   "keywords": [
     "gatsby"
@@ -27,16 +54,26 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve --port 5000",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/un it-testing\" && exit 1"
+    "setup": "yarn && yarn build",
+    "test": "jest",
+    "lint": "node ./node_modules/eslint/bin/eslint . --ignore-path .gitignore ",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npm run lint",
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com//gatsbyjs/gatsby-starter-default"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
