@@ -3,9 +3,9 @@ export {
   fonts,
   weights,
   mediaQueries,
-  jsBreakpoints
-} from "./css-utils";
-export { globalStyles } from "./globalStyles";
+  jsBreakpoints,
+} from './css-utils';
+export { globalStyles } from './globalStyles';
 export {
   contValues,
   container,
@@ -18,5 +18,5 @@ export {
   dropCap,
   pLight,
   partnersProjects,
-  partnersSub
-} from "./custom-css";
+  partnersSub,
+} from './custom-css';
