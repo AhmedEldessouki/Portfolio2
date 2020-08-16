@@ -28,7 +28,20 @@
     "no-confusing-arrow": "off",
     "no-unused-vars": 1,
     "no-use-before-define": 1,
-    "prettier/prettier": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": true,
+        "jsxSingleQuote": true,
+        "bracketSpacing": true,
+        "arrowParens": "avoid",
+        "jsxBracketSameLine": true
+      }
+    ],
     "react/forbid-prop-types": 0,
     "react/prop-types": 1,
     "react/require-default-props": 1,

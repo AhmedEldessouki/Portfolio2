@@ -83,8 +83,7 @@ const SEO = ({ description, lang, meta, keywords, title, image }) => {
               }
             : []
         )
-        .concat(meta)}
-    >
+        .concat(meta)}>
       <link
         rel='preload'
         href='/Fonts/Canela/Canela-Medium.woff2'

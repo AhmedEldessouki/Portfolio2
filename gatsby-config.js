@@ -26,7 +26,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/images`,
       },
     },
     `gatsby-plugin-mdx`,
@@ -40,7 +40,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `static/images/`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-emotion`,
@@ -50,7 +50,7 @@ module.exports = {
       resolve: 'gatsby-plugin-offline',
       options: {
         workboxConfig: {
-          globPatterns: ['src/images/gatsby-icon.png'], // my goes logo
+          globPatterns: ['static/images/'], // my goes logo
         },
       },
     },
