@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const SEO = ({ description, lang, meta, keywords, title, image }) => {
   const { site } = useStaticQuery(
@@ -29,117 +29,117 @@ const SEO = ({ description, lang, meta, keywords, title, image }) => {
   return (
     <Helmet
       htmlAttributes={{
-        lang
+        lang,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription
+          content: metaDescription,
         },
         {
           property: `og:title`,
-          content: title
+          content: title,
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: metaDescription,
         },
         {
           property: `og:type`,
-          content: `website`
+          content: `website`,
         },
         {
           property: `og:image`,
-          content: imageWithFullpath
+          content: imageWithFullpath,
         },
         {
           name: `twitter:card`,
-          content: `summary_large_image`
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author
+          content: site.siteMetadata.author,
         },
         {
           name: `twitter:title`,
-          content: title
+          content: title,
         },
         {
           name: `twitter:image`,
-          content: imageWithFullpath
+          content: imageWithFullpath,
         },
         {
           name: `twitter:description`,
-          content: metaDescription
-        }
+          content: metaDescription,
+        },
       ]
         .concat(
           keywords.length > 0
             ? {
                 name: `keywords`,
-                content: keywords.join(`, `)
+                content: keywords.join(`, `),
               }
             : []
         )
         .concat(meta)}
     >
       <link
-        rel="preload"
-        href="/Fonts/Canela/Canela-Medium.woff2"
-        as="font"
-        crossOrigin="anonymous"
-        type="font/woff2"
+        rel='preload'
+        href='/Fonts/Canela/Canela-Medium.woff2'
+        as='font'
+        crossOrigin='anonymous'
+        type='font/woff2'
       />
       <link
-        rel="preload"
-        href="/Fonts/Canela/Canela-Thin.woff2"
-        as="font"
-        crossOrigin="anonymous"
-        type="font/woff2"
+        rel='preload'
+        href='/Fonts/Canela/Canela-Thin.woff2'
+        as='font'
+        crossOrigin='anonymous'
+        type='font/woff2'
       />
       <link
-        rel="preload"
-        href="/Fonts/Canela/Canela-Bold.woff2"
-        as="font"
-        crossOrigin="anonymous"
-        type="font/woff2"
+        rel='preload'
+        href='/Fonts/Canela/Canela-Bold.woff2'
+        as='font'
+        crossOrigin='anonymous'
+        type='font/woff2'
       />
       <link
-        rel="preload"
-        href="/Fonts/Canela/Canela-Black.woff2"
-        as="font"
-        crossOrigin="anonymous"
-        type="font/woff2"
+        rel='preload'
+        href='/Fonts/Canela/Canela-Black.woff2'
+        as='font'
+        crossOrigin='anonymous'
+        type='font/woff2'
       />
       <link
-        rel="preload"
-        href="/Fonts/Canela/Canela-BlackItalic.woff2"
-        as="font"
-        crossOrigin="anonymous"
-        type="font/woff2"
+        rel='preload'
+        href='/Fonts/Canela/Canela-BlackItalic.woff2'
+        as='font'
+        crossOrigin='anonymous'
+        type='font/woff2'
       />
       <link
-        rel="preload"
-        href="/Fonts/NBInternationalPro/NBInternationalProRegular.woff2"
-        as="font"
-        crossOrigin="anonymous"
-        type="font/woff2"
+        rel='preload'
+        href='/Fonts/NBInternationalPro/NBInternationalProRegular.woff2'
+        as='font'
+        crossOrigin='anonymous'
+        type='font/woff2'
       />
       <link
-        rel="preload"
-        href="/Fonts/NBInternationalPro/NBInternationalProLight.woff2"
-        as="font"
-        crossOrigin="anonymous"
-        type="font/woff2"
+        rel='preload'
+        href='/Fonts/NBInternationalPro/NBInternationalProLight.woff2'
+        as='font'
+        crossOrigin='anonymous'
+        type='font/woff2'
       />
       <link
-        rel="preload"
-        href="/Fonts/NBInternationalPro/NBInternationalProBold.woff2"
-        as="font"
-        crossOrigin="anonymous"
-        type="font/woff2"
+        rel='preload'
+        href='/Fonts/NBInternationalPro/NBInternationalProBold.woff2'
+        as='font'
+        crossOrigin='anonymous'
+        type='font/woff2'
       />
     </Helmet>
   );
@@ -151,7 +151,7 @@ SEO.defaultProps = {
   keywords: [],
   description: ``,
   title: null,
-  image: null
+  image: null,
 };
 
 SEO.propTypes = {
@@ -160,7 +160,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
-  image: PropTypes.string
+  image: PropTypes.string,
 };
 
 export default SEO;

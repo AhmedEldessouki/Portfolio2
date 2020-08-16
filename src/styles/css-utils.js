@@ -19,7 +19,7 @@ export const jsBreakpoints = breakpoints.reduce((acc, bp, i) => {
 export const fonts = {
   serif: `'Canela', serif`,
   sans: `'NB International Pro', sans-serif`,
-  mono: `'NB International Pro Mono', monospace`
+  mono: `'NB International Pro Mono', monospace`,
 };
 
 export const weights = {
@@ -28,7 +28,7 @@ export const weights = {
   regular: `400`,
   medium: `500`,
   bold: `700`,
-  black: `900`
+  black: `900`,
 };
 
 /* Colors - Use a RGB to HEX converter */
@@ -47,9 +47,9 @@ export const colors = {
   lightblue: `#a5e6ec`,
   acquiaBlue: `#0678BE`,
   lightgreen: `#cef5e2`,
-  gatsbyPurple: "#663399",
-  drupalBlue: "#29A8DF",
-  shopifyGreen: "#80AB42",
-  bigCommerceBlue: "#0D52FF",
-  red: "red"
+  gatsbyPurple: '#663399',
+  drupalBlue: '#29A8DF',
+  shopifyGreen: '#80AB42',
+  bigCommerceBlue: '#0D52FF',
+  red: 'red',
 };

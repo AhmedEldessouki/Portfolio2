@@ -3,9 +3,9 @@
 // Styles that are more specific than the element level, but that we still want
 // to reuse across multiple components. Basically things that would be regular
 // CSS classes in a non-JS-based theme.
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 
-import { fonts, colors, weights, mediaQueries } from "./css-utils";
+import { fonts, colors, weights, mediaQueries } from './css-utils';
 
 // Containers
 const contWidths = [680, 820, 1020, 1120, 1220];
@@ -59,7 +59,7 @@ export const btnStyles = css`
     transition: all 0.3s ease;
   }
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: 0;
@@ -233,7 +233,7 @@ export const partnersSub = css`
       padding-left: 0;
 
       &:before {
-        content: "—";
+        content: '—';
         padding-right: 2px;
       }
     }
@@ -284,7 +284,7 @@ export const list = css`
       padding-left: 0;
 
       &:before {
-        content: "—";
+        content: '—';
         padding-right: 2px;
       }
     }
