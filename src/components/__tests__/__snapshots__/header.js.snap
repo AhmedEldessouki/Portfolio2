@@ -2,19 +2,31 @@
 
 exports[`Header renders correctly 1`] = `
 <header
-  style={
+  css={
     Object {
-      "background": "rebeccapurple",
-      "marginBottom": "1.45rem",
+      "map": undefined,
+      "name": "xvi3ds",
+      "next": undefined,
+      "styles": "
+      background: black;
+      margin-bottom: 1.45rem;
+    ",
+      "toString": [Function],
     }
   }
 >
   <div
-    style={
+    css={
       Object {
-        "margin": "0 auto",
-        "maxWidth": 960,
-        "padding": "1.45rem 1.0875rem",
+        "map": undefined,
+        "name": "1qla906",
+        "next": undefined,
+        "styles": "
+        margin: 0 auto;
+        maxwidth: 960px;
+        padding: 1.45rem 1.0875rem;
+      ",
+        "toString": [Function],
       }
     }
   >
