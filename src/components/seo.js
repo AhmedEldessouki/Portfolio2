@@ -1,16 +1,9 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
+import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
+const SEO = ({ description, lang, meta, keywords, title, image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,6 +19,12 @@ function SEO({ description, lang, meta, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+
+  const defaultImage = `/images/icon.png`;
+
+  const metaImage = image || defaultImage;
+
+  const imageWithFullpath = `https://Link${metaImage}`; // Still need to edit this later
 
   return (
     <Helmet
@@ -52,8 +51,12 @@ function SEO({ description, lang, meta, title }) {
           content: `website`
         },
         {
+          property: `og:image`,
+          content: imageWithFullpath
+        },
+        {
           name: `twitter:card`,
-          content: `summary`
+          content: `summary_large_image`
         },
         {
           name: `twitter:creator`,
@@ -64,25 +67,100 @@ function SEO({ description, lang, meta, title }) {
           content: title
         },
         {
+          name: `twitter:image`,
+          content: imageWithFullpath
+        },
+        {
           name: `twitter:description`,
           content: metaDescription
         }
-      ].concat(meta)}
-    />
+      ]
+        .concat(
+          keywords.length > 0
+            ? {
+                name: `keywords`,
+                content: keywords.join(`, `)
+              }
+            : []
+        )
+        .concat(meta)}
+    >
+      <link
+        rel="preload"
+        href="/Fonts/Canela/Canela-Medium.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/Fonts/Canela/Canela-Thin.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/Fonts/Canela/Canela-Bold.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/Fonts/Canela/Canela-Black.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/Fonts/Canela/Canela-BlackItalic.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/Fonts/NBInternationalPro/NBInternationalProRegular.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/Fonts/NBInternationalPro/NBInternationalProLight.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/Fonts/NBInternationalPro/NBInternationalProBold.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
+      />
+    </Helmet>
   );
-}
+};
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``
+  keywords: [],
+  description: ``,
+  title: null,
+  image: null
 };
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  title: PropTypes.string,
+  image: PropTypes.string
 };
 
 export default SEO;
