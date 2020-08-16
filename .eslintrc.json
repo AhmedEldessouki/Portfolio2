@@ -28,7 +28,14 @@
     "no-confusing-arrow": "off",
     "no-unused-vars": 1,
     "no-use-before-define": 1,
-    "prettier/prettier": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        "jsxBracketSameLine": true,
+        "singleQuote": true,
+        "jsxSingleQuote": true
+      }
+    ],
     "react/forbid-prop-types": 0,
     "react/prop-types": 1,
     "react/require-default-props": 1,
