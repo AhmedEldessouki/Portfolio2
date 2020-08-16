@@ -31,9 +31,15 @@
     "prettier/prettier": [
       "warn",
       {
-        "jsxBracketSameLine": true,
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
         "singleQuote": true,
-        "jsxSingleQuote": true
+        "jsxSingleQuote": true,
+        "bracketSpacing": true,
+        "arrowParens": "avoid",
+        "jsxBracketSameLine": true
       }
     ],
     "react/forbid-prop-types": 0,
