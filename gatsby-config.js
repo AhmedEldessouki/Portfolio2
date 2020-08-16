@@ -29,14 +29,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-mdx`,
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        defaultQuality: 85,
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -59,6 +52,18 @@ module.exports = {
         workboxConfig: {
           globPatterns: ['src/images/gatsby-icon.png'], // my goes logo
         },
+      },
+    },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'sx9h9cxs',
+        dataset: 'production',
+        // Live Editing
+        overlayDrafts: true,
+        watchMode: true,
+        token:
+          'skmuy0HGowBYIE04BzBUibyzotZxfS3dQW41RErtCaYcUZjntsAjlIx2DD3MEieZbTLnJ8baaIzVUYqnRESqTz3wpnErWpR7pzW4WHF3RWTeEvd6erX5qX8u05hTZ6bWkqvkeXwlLRV0KbZi0lJ6yAtyucMVrrcmNWue5sCJWZhugvmz569o',
       },
     },
   ],
