@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 module.exports = {
   siteMetadata: {
     title: `Ahmed ElDessouki Portfolio `,
@@ -29,18 +28,25 @@ module.exports = {
         path: `${__dirname}/static/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `ahmed elDessouki portfolio`,
-        short_name: `nemz`,
+        name: `Ahmed ElDessouki portfolio`,
+        short_name: `Nemz`,
         start_url: `/`,
         lang: `en`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/images/`, // This path is relative to the root of the site.
+        // icon: ``, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-emotion`,

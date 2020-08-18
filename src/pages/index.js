@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const IndexPage = () => (
-  <Layout>
+  <div>
     <SEO title='Home' />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -13,7 +13,7 @@ const IndexPage = () => (
     <br />
     <Link to='/about/'>ABOUT</Link>
     <br />
-  </Layout>
+  </div>
 );
 
 export default IndexPage;
