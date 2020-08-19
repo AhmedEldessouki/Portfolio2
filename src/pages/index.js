@@ -2,18 +2,19 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 
 const IndexPage = () => (
-  <div>
-    <SEO title='Home' />
+  <Layout
+    headerData={{
+      title: 'Home Page',
+    }}>
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <br />
     <Link to='/about/'>ABOUT</Link>
     <br />
-  </div>
+  </Layout>
 );
 
 export default IndexPage;

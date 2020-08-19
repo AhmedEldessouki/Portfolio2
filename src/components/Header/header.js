@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import TopNav from '../TopNav';
 import SEO from '../seo';
 import { colors, weights, mediaQueries } from '../../styles';
 import FullWidth from '../FullWidth';
@@ -23,6 +22,7 @@ import FullWidth from '../FullWidth';
  * @param {node} children
  * @param {bool} invert - this will be used to invert fontColor
  */
+
 const Header = ({
   title,
   metaTitle,
@@ -36,32 +36,33 @@ const Header = ({
   children,
   invert,
 }) => {
-  // const isLightBackground = value => {
-  //   let r;
-  //   let g;
-  //   let b;
+  const isLightBackground = value => {
+    let r;
+    let g;
+    let b;
 
-  //   if (value.match(/^rgb/)) {
-  //     // if HEX, store the Red, Green, abd Blue values in separate variables
-  //     [r, g, b] = value.match(
-  //       /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/
-  //     );
-  //   } else {
-  //     // if RGB, convert it to HEX
-  //     // @see: http://gist.github.com/983661
-  //     const rgbVal = +`0x${value
-  //       .slice(1)
-  //       .replace(value.length < 5 && /./g, '$&$&')}`;
-  //     r = rgbVal >> 16;
-  //     g = rgbVal & 255;
-  //     b = (rgbVal >> 8) & 255;
-  //   }
-  //   return (
-  //     Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b)) > 127.5
-  //   );
-  // };
+    if (value.match(/^rgb/)) {
+      // if HEX, store the Red, Green, abd Blue values in separate variables
+      [r, g, b] = value.match(
+        /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/
+      );
+    } else {
+      // if RGB, convert it to HEX
+      // @see: http://gist.github.com/983661
+      const rgbVal = +`0x${value
+        .slice(1)
+        .replace(value.length < 5 && /./g, '$&$&')}`;
+      r = rgbVal >> 16;
+      g = rgbVal & 255;
+      b = (rgbVal >> 8) & 255;
+    }
+    return (
+      Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b)) > 127.5
+    );
+  };
 
-  const fontColor = color && !invert ? colors.darkgray : colors.lightgray;
+  const fontColor =
+    isLightBackground(color) && !invert ? colors.darkgray : colors.lightgray;
 
   const sectionCss = css`
     padding: 88px 0;
@@ -132,9 +133,8 @@ const Header = ({
   `;
 
   return (
-    <>
+    <div>
       <SEO title={metaTitle || title} description={description} image={image} />
-      <TopNav />
       <FullWidth css={sectionCss} height={height} minHeight={mobileMinHeight}>
         {title && (
           <h1 data-cy='titleText' css={headerTitle}>
@@ -143,11 +143,9 @@ const Header = ({
         )}
         {children && children}
       </FullWidth>
-    </>
+    </div>
   );
 };
-
-// exporting headerPropTypes for Layout use
 export const headerPropTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   metaTitle: PropTypes.string,

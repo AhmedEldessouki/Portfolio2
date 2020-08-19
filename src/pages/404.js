@@ -1,22 +1,18 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
-import { navigate } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 
 const NotFoundPage = () => (
   <Layout
     headerData={{
-      height: 'calc(100vh - 200px)',
-      mobileMinHeight: '93vh',
+      title: '404 - passed from',
+      description: 'Distanation not found',
+      height: '400px',
+      mobileMinHeight: '100px',
+      children: <h1> Shit just hit the fan </h1>,
     }}>
-    <SEO title='404: Not found' />
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    <button type='button' onClick={() => navigate('/')}>
-      Home
-    </button>
   </Layout>
 );
 

@@ -26,13 +26,12 @@ const Layout = ({ children, headerData }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   headerData: PropTypes.shape(headerPropTypes),
 };
 
 Layout.defaultProps = {
   headerData: {},
-  children: null,
 };
 
 export default Layout;
