@@ -2,11 +2,16 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title='Home' />
+  <Layout
+    headerData={{
+      title: 'Welcome To Home Page',
+      height: '400px',
+      tittleMarginBottom: '88px',
+      tittlePadding: '20px 40px',
+      children: <h2>This is the Landing Page</h2>,
+    }}>
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>

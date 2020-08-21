@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 module.exports = {
   siteMetadata: {
     title: `Ahmed ElDessouki Portfolio `,
@@ -29,20 +28,28 @@ module.exports = {
         path: `${__dirname}/static/images`,
       },
     },
-    `gatsby-plugin-mdx`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `ahmed elDessouki portfolio`,
-        short_name: `nemz`,
-        start_url: `/`,
-        lang: `en`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `static/images/`, // This path is relative to the root of the site.
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-mdx`,
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Ahmed ElDessouki portfolio`,
+    //     short_name: `Nemz`,
+    //     start_url: `/`,
+    //     lang: `en`,
+    //     background_color: `#663399`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     // icon: ``, // This path is relative to the root of the site.
+    //   },
+    // },
+    'gatsby-plugin-manifest',
     `gatsby-plugin-emotion`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
