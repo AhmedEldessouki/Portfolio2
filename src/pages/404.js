@@ -5,9 +5,10 @@ import Layout from '../components/layout';
 const NotFoundPage = () => (
   <Layout
     headerData={{
-      title: '404 - passed from',
-      description: 'Distanation not found',
+      title: '404',
+      description: 'Destination not found',
       height: '400px',
+      tittleMarginBottom: '88px',
       mobileMinHeight: '100px',
       children: <h1> Shit just hit the fan </h1>,
     }}>

@@ -12,17 +12,17 @@ import { Global } from '@emotion/core';
 import { globalStyles } from '../styles';
 
 import Header, { headerPropTypes } from './Header/Header';
-// import Footer from './Footer';
+import Footer from './Footer';
 
 import '../styles/layout.css';
 
 const Layout = ({ children, headerData }) => (
-  <>
+  <div>
     <Global styles={globalStyles} />
     <Header {...headerData} />
     <main>{children}</main>
-    {/* <Footer /> */}
-  </>
+    <Footer />
+  </div>
 );
 
 Layout.propTypes = {

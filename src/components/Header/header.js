@@ -4,8 +4,9 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import SEO from '../seo';
-import { colors, weights, mediaQueries } from '../../styles';
+import { colors, weights, mediaQueries, fonts } from '../../styles';
 import FullWidth from '../FullWidth';
+import TopNav from '../TopNav';
 
 /**
  * Header for every page
@@ -64,15 +65,10 @@ const Header = ({
   const fontColor =
     isLightBackground(color) && !invert ? colors.darkgray : colors.lightgray;
 
-  const sectionCss = css`
-    padding: 88px 0;
-    background-color: ${color};
-  `;
-
   const headerTitle = css`
-    @keyframes headerSlide {
+    @keyframes headerSlider {
       0% {
-        transform: translateY(50%);
+        transform: translateY(25%);
       }
       100% {
         transform: translateY(0);
@@ -96,8 +92,10 @@ const Header = ({
     font-weight: ${weights.medium};
     letter-spacing: -0.45px;
     text-align: center;
+    font-family: ${fonts.serif};
+    font-weight: ${weights.bold};
     color: ${fontColor};
-    transform: translateY(50%);
+    transform: translateY(25%);
     animation-name: headerSlider;
     animation-duration: 0.7s;
     animation-timing-function: ease-out;
@@ -119,25 +117,39 @@ const Header = ({
       animation-fill-mode: inherit;
     }
 
+    ${mediaQueries.desktop} {
+      width: 60%;
+    }
+
     ${mediaQueries.phoneLarge} {
       width: 75%;
+      margin-bottom: ${tittleMarginBottom};
       padding: ${tittlePadding};
       font-size: 72px;
       line-height: 1.17;
       letter-spacing: -1px;
     }
 
-    ${mediaQueries.desktop} {
-      width: 60%;
+    ${mediaQueries.xs} {
+      margin-bottom: calc(${tittleMarginBottom} % 2);
     }
+  `;
+  const sectionCss = css`
+    background-color: ${color};
+    color: ${fontColor};
   `;
 
   return (
     <div>
       <SEO title={metaTitle || title} description={description} image={image} />
-      <FullWidth css={sectionCss} height={height} minHeight={mobileMinHeight}>
+      <TopNav />
+      <FullWidth
+        css={sectionCss}
+        height={height}
+        minHeight={mobileMinHeight}
+        padding={tittlePadding}>
         {title && (
-          <h1 data-cy='titleText' css={headerTitle}>
+          <h1 data-cy='titleText' css={[headerTitle]}>
             {title}
           </h1>
         )}

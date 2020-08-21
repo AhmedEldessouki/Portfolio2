@@ -200,7 +200,7 @@ export const globalStyles = css`
     -webkit-text-size-adjust: 100%;
     font-size: 100%;
 
-    ${mediaQueries.xs} {
+    ${mediaQueries.s} {
       font-size: 112.5%;
     }
   }
@@ -298,6 +298,7 @@ export const globalStyles = css`
 
   h2 {
     font-size: 1.62671rem;
+    font-style: italic;
   }
 
   h3 {
