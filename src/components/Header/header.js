@@ -153,7 +153,7 @@ const Header = ({
             {title}
           </h1>
         )}
-        {children && children}
+        {(children && children) || null}
       </FullWidth>
     </div>
   );

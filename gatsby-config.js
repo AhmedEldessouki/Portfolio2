@@ -62,16 +62,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-sanity',
+      resolve: 'gatsby-plugin-sharp',
       options: {
-        projectId: 'sx9h9cxs',
-        dataset: 'production',
-        // Live Editing
-        overlayDrafts: true,
-        watchMode: true,
-        token:
-          'skmuy0HGowBYIE04BzBUibyzotZxfS3dQW41RErtCaYcUZjntsAjlIx2DD3MEieZbTLnJ8baaIzVUYqnRESqTz3wpnErWpR7pzW4WHF3RWTeEvd6erX5qX8u05hTZ6bWkqvkeXwlLRV0KbZi0lJ6yAtyucMVrrcmNWue5sCJWZhugvmz569o',
+        defaultQuality: 85,
       },
     },
+    `gatsby-transformer-sharp`,
   ],
 };

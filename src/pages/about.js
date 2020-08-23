@@ -2,7 +2,6 @@ import React from 'react';
 // import Image from 'gatsby-image';
 
 import Layout from '../components/layout';
-import FullWidth from '../components/FullWidth/FullWidth';
 
 const About = () => {
   return (
