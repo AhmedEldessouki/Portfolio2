@@ -7,26 +7,6 @@ import { css } from '@emotion/core';
 
 import { fonts, colors, weights, mediaQueries } from './css-utils';
 
-// Containers
-const contWidths = [680, 820, 1020, 1120, 1220];
-const contLabels = [`min`, `textOnly`, `medium`, `large`, `max`];
-
-export const contValues = contWidths.reduce((acc, value, i) => {
-  acc[contLabels[i]] = `${value}px`;
-  return acc;
-}, {});
-
-export const container = contWidths.reduce((acc, w, i) => {
-  acc[contLabels[i]] = css`
-    width: ${w}px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  `;
-  return acc;
-}, {});
-
 export const btnStyles = css`
   position: relative;
   padding: 0;
@@ -86,7 +66,7 @@ export const btnStyles = css`
 // Heading modifications
 export const h1Xl = css`
   margin-bottom: 10px;
-  font-size: 39px;
+  font-size: 100px;
   line-height: 1.23;
   font-weight: ${weights.black};
   letter-spacing: 0.52px;
@@ -100,15 +80,28 @@ export const h1Xl = css`
 `;
 
 export const h1L = css`
-  font-size: 39px;
+  font-size: 60px;
   font-weight: ${weights.medium};
   line-height: 1.23;
   letter-spacing: -0.45px;
+  text-align: center;
 
-  ${mediaQueries.phoneLarge} {
-    font-size: 72px;
+  ${mediaQueries.desktop} {
+    font-size: calc(60px * 0.8);
     line-height: 1.16;
     letter-spacing: 0;
+  }
+  ${mediaQueries.phoneLarge} {
+    font-size: calc(60px * 0.55);
+    line-height: 1.16;
+    letter-spacing: 0;
+  }
+  ${mediaQueries.s} {
+    font-size: calc(60px * 0.4);
+  }
+  ${mediaQueries.xs} {
+    font-size: calc(60px * 0.3);
+    width: 95%;
   }
 `;
 
@@ -214,9 +207,5 @@ export const list = css`
         padding-right: 2px;
       }
     }
-  }
-
-  ${mediaQueries.phoneLarge} {
-    ${container.min}
   }
 `;

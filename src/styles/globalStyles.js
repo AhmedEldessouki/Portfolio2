@@ -343,7 +343,7 @@ export const globalStyles = css`
     &:hover,
     &:focus {
       outline-width: 0;
-      color: ${colors.darkgray};
+      color: ${colors.blueGreen};
     }
   }
 
