@@ -4,7 +4,7 @@
 import { jsx, css } from '@emotion/core';
 import { Link } from 'gatsby';
 
-import { colors } from '../../styles';
+import { colors, weights } from '../../styles';
 
 export default () => {
   const container = css`
@@ -13,13 +13,14 @@ export default () => {
     align-items: center;
     padding: 0 88px;
     width: 100%;
-    background: ${colors.darkergrayFaded};
+    background: ${colors.aliceLightBlue};
   `;
 
   const forLink = css`
-    color: ${colors.lightgray};
+    color: ${colors.independenceBlue};
     padding: 20px 50px;
     letter-spacing: 1px;
+    font-weight: ${weights.bold};
   `;
 
   return (
@@ -28,8 +29,8 @@ export default () => {
         to='/'
         css={forLink}
         activeStyle={{
-          background: colors.darkgray,
-          color: colors.whiteFaded,
+          background: colors.independenceBlue,
+          color: colors.aliceLightBlue,
         }}>
         Home
       </Link>
@@ -37,8 +38,8 @@ export default () => {
         to='/skills/'
         css={forLink}
         activeStyle={{
-          background: colors.darkgray,
-          color: colors.whiteFaded,
+          background: colors.independenceBlue,
+          color: colors.aliceLightBlue,
         }}>
         Skills
       </Link>
@@ -46,8 +47,8 @@ export default () => {
         to='/projects/'
         css={forLink}
         activeStyle={{
-          background: colors.darkgray,
-          color: colors.whiteFaded,
+          background: colors.independenceBlue,
+          color: colors.aliceLightBlue,
         }}>
         Projects
       </Link>
@@ -55,8 +56,8 @@ export default () => {
         to='/about/'
         css={forLink}
         activeStyle={{
-          background: colors.darkgray,
-          color: colors.whiteFaded,
+          background: colors.independenceBlue,
+          color: colors.aliceLightBlue,
         }}>
         About
       </Link>

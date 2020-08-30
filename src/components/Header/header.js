@@ -4,7 +4,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import SEO from '../seo';
-import { colors, weights, mediaQueries, fonts } from '../../styles';
+import { colors, weights, mediaQueries, fonts, h1Xl } from '../../styles';
 import FullWidth from '../FullWidth';
 import TopNav from '../TopNav';
 
@@ -86,9 +86,9 @@ const Header = ({
 
     position: relative;
     margin-bottom: ${tittleMarginBottom};
-    padding: 0 20px;
+    padding: ${tittlePadding};
     line-height: 1.23;
-    font-size: 39px;
+    font-size: 72px;
     font-weight: ${weights.medium};
     letter-spacing: -0.45px;
     text-align: center;
@@ -118,20 +118,26 @@ const Header = ({
     }
 
     ${mediaQueries.desktop} {
-      width: 60%;
+      width: 80%;
+      font-size: calc(50px * 0.8);
     }
 
     ${mediaQueries.phoneLarge} {
-      width: 75%;
-      margin-bottom: ${tittleMarginBottom};
-      padding: ${tittlePadding};
-      font-size: 72px;
+      margin-bottom: calc(${tittleMarginBottom} * 0.75);
+      padding: calc(${tittlePadding} * 0.8);
       line-height: 1.17;
       letter-spacing: -1px;
+      width: 95%;
+    }
+
+    ${mediaQueries.s} {
+      margin-bottom: calc(${tittleMarginBottom} % 2);
+      width: 100%;
+      padding: calc(${tittlePadding} * 0.7);
+      font-size: calc(50px * 0.5);
     }
 
     ${mediaQueries.xs} {
-      margin-bottom: calc(${tittleMarginBottom} % 2);
     }
   `;
   const sectionCss = css`
@@ -153,7 +159,7 @@ const Header = ({
             {title}
           </h1>
         )}
-        {children && children}
+        {(children && children) || null}
       </FullWidth>
     </div>
   );
@@ -179,7 +185,7 @@ Header.defaultProps = {
   metaTitle: null,
   description: null,
   image: null,
-  color: colors.reallydarkgray,
+  color: colors.independenceBlue,
   tittleMarginBottom: '0',
   tittlePadding: '0 20px',
   height: '700px',

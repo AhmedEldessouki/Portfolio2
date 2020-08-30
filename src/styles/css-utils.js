@@ -6,7 +6,7 @@ const breakpoints = [320, 480, 900, 1220];
 const names = [`xs`, `s`, `phoneLarge`, `desktop`];
 
 export const mediaQueries = breakpoints.reduce((acc, bp, i) => {
-  acc[names[i]] = `@media (min-width: ${bp}px)`;
+  acc[names[i]] = `@media (max-width: ${bp}px)`;
   return acc;
 }, {});
 
@@ -43,13 +43,13 @@ export const colors = {
   darkgrayFaded: `rgba(41, 41, 42, 0.7)`,
   darkergrayFaded: `rgba(41, 41, 42, 0.9)`,
   reallydarkgray: `#282829;`,
-  yellow: `#EBC900`,
+  viridianGreen: `#119DA4`,
   lightblue: `#a5e6ec`,
-  acquiaBlue: `#0678BE`,
-  lightgreen: `#cef5e2`,
+  independenceBlue: `#3A405A`,
+  aliceLightBlue: `#E9F1F7`,
   gatsbyPurple: '#663399',
   drupalBlue: '#29A8DF',
-  shopifyGreen: '#80AB42',
+  blueGreen: '#2F97C1',
   bigCommerceBlue: '#0D52FF',
-  red: 'red',
+  burgundyRed: '#890620',
 };

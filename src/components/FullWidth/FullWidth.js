@@ -22,4 +22,7 @@ export default styled.section`
   ${mediaQueries.phoneLarge} {
     min-height: ${props => props.height || '700px'};
   }
+  ${mediaQueries.s} {
+    padding: 10px;
+  }
 `;
