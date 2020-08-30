@@ -9,7 +9,9 @@
     "lightblue",
     "lightgray",
     "lightgreen",
+    "minmax",
     "reallydarkgray",
     "tnum"
-  ]
+  ],
+  "prettier.configPath": ".prettierrc.json"
 }
