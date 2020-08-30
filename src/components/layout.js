@@ -11,7 +11,8 @@ import { Global } from '@emotion/core';
 
 import { globalStyles } from '../styles';
 
-import Header, { headerPropTypes } from './Header/Header';
+import Header from './Header';
+import { headerPropTypes } from './Header/header';
 import Footer from './Footer';
 
 import '../styles/layout.css';

@@ -10,14 +10,14 @@ import { fonts, colors, weights, mediaQueries } from './css-utils';
 export const btnStyles = css`
   position: relative;
   padding: 0;
-  border: none;
+  border: 1px solid ${colors.aliceLightBlue};
+  border-radius: 10%;
   outline: none;
   font-family: ${fonts.sans};
   font-weight: ${weights.bold};
   font-size: 15px;
   line-height: 1.2;
   letter-spacing: 2px;
-  text-transform: uppercase;
   background: transparent;
   color: ${colors.darkgray};
   cursor: pointer;
@@ -25,7 +25,7 @@ export const btnStyles = css`
   span {
     display: block;
     position: relative;
-    padding: 17px 28px;
+    padding: 8px 28px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(
@@ -47,7 +47,7 @@ export const btnStyles = css`
     width: 100%;
     height: 1px;
     transition: 0.3s ease height;
-    background: ${colors.darkgray};
+    background: ${colors.independenceBlue};
   }
   &:hover,
   &:focus {

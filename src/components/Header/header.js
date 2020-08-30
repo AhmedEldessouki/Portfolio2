@@ -4,7 +4,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import SEO from '../seo';
-import { colors, weights, mediaQueries, fonts, h1Xl } from '../../styles';
+import { colors, weights, mediaQueries, fonts } from '../../styles';
 import FullWidth from '../FullWidth';
 import TopNav from '../TopNav';
 
