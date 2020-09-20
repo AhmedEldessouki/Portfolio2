@@ -69,8 +69,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "npm run lint",
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "lint-staged"
     }
   },
   "repository": {
