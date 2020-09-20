@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
-import { weights, mediaQueries } from '../../styles';
+import {weights, mediaQueries} from '../../styles'
 
 export default styled.section`
   width: ${props => props.width || '100%'};
@@ -25,4 +25,4 @@ export default styled.section`
   ${mediaQueries.s} {
     padding: 10px;
   }
-`;
+`

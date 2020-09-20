@@ -62,4 +62,4 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
   ],
-};
+}

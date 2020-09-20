@@ -2,25 +2,25 @@
 /* Variables and functions specifically for CSS-in-JS use */
 
 /* Media queries */
-const breakpoints = [320, 480, 900, 1220];
-const names = [`xs`, `s`, `phoneLarge`, `desktop`];
+const breakpoints = [320, 480, 900, 1220]
+const names = [`xs`, `s`, `phoneLarge`, `desktop`]
 
 export const mediaQueries = breakpoints.reduce((acc, bp, i) => {
-  acc[names[i]] = `@media (max-width: ${bp}px)`;
-  return acc;
-}, {});
+  acc[names[i]] = `@media (max-width: ${bp}px)`
+  return acc
+}, {})
 
 export const jsBreakpoints = breakpoints.reduce((acc, bp, i) => {
-  acc[names[i]] = bp;
-  return acc;
-}, {});
+  acc[names[i]] = bp
+  return acc
+}, {})
 
 /* Fonts */
 export const fonts = {
   serif: `'Canela', serif`,
   sans: `'NB International Pro', sans-serif`,
   mono: `'NB International Pro Mono', monospace`,
-};
+}
 
 export const weights = {
   thin: `100`,
@@ -29,7 +29,7 @@ export const weights = {
   medium: `500`,
   bold: `700`,
   black: `900`,
-};
+}
 
 /* Colors - Use a RGB to HEX converter */
 export const colors = {
@@ -52,4 +52,4 @@ export const colors = {
   blueGreen: '#2F97C1',
   bigCommerceBlue: '#0D52FF',
   burgundyRed: '#890620',
-};
+}
