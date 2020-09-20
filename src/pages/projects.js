@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import Layout from '../components/layout';
+import Layout from '../components/layout'
 
 const projects = () => {
   return (
@@ -12,7 +12,7 @@ const projects = () => {
         children: <h2>React, Gatsby, Angular, JS, HTML, & CSS.</h2>,
       }}
     />
-  );
-};
+  )
+}
 
-export default projects;
+export default projects

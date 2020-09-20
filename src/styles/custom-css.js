@@ -3,9 +3,9 @@
 // Styles that are more specific than the element level, but that we still want
 // to reuse across multiple components. Basically things that would be regular
 // CSS classes in a non-JS-based theme.
-import { css } from '@emotion/core';
+import {css} from '@emotion/core'
 
-import { fonts, colors, weights, mediaQueries } from './css-utils';
+import {fonts, colors, weights, mediaQueries} from './css-utils'
 
 export const btnStyles = css`
   position: relative;
@@ -61,7 +61,7 @@ export const btnStyles = css`
       height: 100%;
     }
   }
-`;
+`
 
 // Heading modifications
 export const h1Xl = css`
@@ -77,7 +77,7 @@ export const h1Xl = css`
     line-height: 1;
     letter-spacing: 1.33px;
   }
-`;
+`
 
 export const h1L = css`
   font-size: 60px;
@@ -103,7 +103,7 @@ export const h1L = css`
     font-size: calc(60px * 0.3);
     width: 95%;
   }
-`;
+`
 
 export const smSectionHead = css`
   margin-bottom: 0;
@@ -119,7 +119,7 @@ export const smSectionHead = css`
     line-height: 2;
     letter-spacing: 0.4px;
   }
-`;
+`
 
 export const contentH2 = css`
   margin-top: 25px;
@@ -128,7 +128,7 @@ export const contentH2 = css`
   font-size: 21px;
   font-weight: ${weights.bold};
   line-height: 1.4;
-`;
+`
 
 export const contentHeadings = css`
   font-family: ${fonts.sans};
@@ -137,7 +137,7 @@ export const contentHeadings = css`
   letter-spacing: 0.2px;
   line-height: 1.69;
   margin-bottom: 30px;
-`;
+`
 
 export const dropCap = css`
   & > p:first-of-type::first-letter {
@@ -153,7 +153,7 @@ export const dropCap = css`
       padding: 6px 18px 0;
     }
   }
-`;
+`
 
 export const pLight = css`
    {
@@ -165,7 +165,7 @@ export const pLight = css`
     line-height: 1.69;
     text-align: center;
   }
-`;
+`
 
 export const list = css`
   padding: 50px 20px;
@@ -208,4 +208,4 @@ export const list = css`
       }
     }
   }
-`;
+`

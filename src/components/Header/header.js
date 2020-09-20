@@ -1,12 +1,12 @@
 /* eslint-disable no-bitwise */
-import PropTypes from 'prop-types';
-import React from 'react';
-import { css } from '@emotion/core';
+import PropTypes from 'prop-types'
+import React from 'react'
+import {css} from '@emotion/core'
 
-import SEO from '../seo';
-import { colors, weights, mediaQueries, fonts } from '../../styles';
-import FullWidth from '../FullWidth';
-import TopNav from '../TopNav';
+import SEO from '../seo'
+import {colors, weights, mediaQueries, fonts} from '../../styles'
+import FullWidth from '../FullWidth'
+import TopNav from '../TopNav'
 
 /**
  * Header for every page
@@ -38,32 +38,30 @@ const Header = ({
   invert,
 }) => {
   const isLightBackground = value => {
-    let r;
-    let g;
-    let b;
+    let r, g, b
 
     if (value.match(/^rgb/)) {
       // if HEX, store the Red, Green, abd Blue values in separate variables
-      [r, g, b] = value.match(
-        /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/
-      );
+      ;[r, g, b] = value.match(
+        /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/,
+      )
     } else {
       // if RGB, convert it to HEX
       // @see: http://gist.github.com/983661
       const rgbVal = +`0x${value
         .slice(1)
-        .replace(value.length < 5 && /./g, '$&$&')}`;
-      r = rgbVal >> 16;
-      g = rgbVal & 255;
-      b = (rgbVal >> 8) & 255;
+        .replace(value.length < 5 && /./g, '$&$&')}`
+      r = rgbVal >> 16
+      g = rgbVal & 255
+      b = (rgbVal >> 8) & 255
     }
     return (
       Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b)) > 127.5
-    );
-  };
+    )
+  }
 
   const fontColor =
-    isLightBackground(color) && !invert ? colors.darkgray : colors.lightgray;
+    isLightBackground(color) && !invert ? colors.darkgray : colors.lightgray
 
   const headerTitle = css`
     @keyframes headerSlider {
@@ -139,11 +137,11 @@ const Header = ({
 
     ${mediaQueries.xs} {
     }
-  `;
+  `
   const sectionCss = css`
     background-color: ${color};
     color: ${fontColor};
-  `;
+  `
 
   return (
     <div>
@@ -153,17 +151,18 @@ const Header = ({
         css={sectionCss}
         height={height}
         minHeight={mobileMinHeight}
-        padding={tittlePadding}>
+        padding={tittlePadding}
+      >
         {title && (
-          <h1 data-cy='titleText' css={[headerTitle]}>
+          <h1 data-cy="titleText" css={[headerTitle]}>
             {title}
           </h1>
         )}
         {(children && children) || null}
       </FullWidth>
     </div>
-  );
-};
+  )
+}
 export const headerPropTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   metaTitle: PropTypes.string,
@@ -176,9 +175,9 @@ export const headerPropTypes = {
   mobileMinHeight: PropTypes.string,
   children: PropTypes.node,
   invert: PropTypes.bool,
-};
+}
 
-Header.propTypes = headerPropTypes;
+Header.propTypes = headerPropTypes
 
 Header.defaultProps = {
   title: null,
@@ -192,6 +191,6 @@ Header.defaultProps = {
   mobileMinHeight: '300px',
   children: null,
   invert: false,
-};
+}
 
-export default Header;
+export default Header

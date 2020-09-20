@@ -1,16 +1,15 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-import React from 'react';
-import { css } from '@emotion/core';
-import Image from 'gatsby-image';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import {css} from '@emotion/core'
+import Image from 'gatsby-image'
+import {useStaticQuery, graphql} from 'gatsby'
 
-import { colors, mediaQueries, weights, h1L } from '../styles';
-import Layout from '../components/layout';
+import {mediaQueries, h1L} from '../styles'
+import Layout from '../components/layout'
 
 function About() {
   const data = useStaticQuery(graphql`
     query {
-      imageOne: file(relativePath: { eq: "me.png" }) {
+      imageOne: file(relativePath: {eq: "me.png"}) {
         childImageSharp {
           fixed(width: 250, height: 250) {
             ...GatsbyImageSharpFixed
@@ -18,7 +17,7 @@ function About() {
         }
       }
     }
-  `);
+  `)
 
   const container = css`
     display: flex;
@@ -41,17 +40,17 @@ function About() {
         font-size: 80%;
       }
     }
-  `;
+  `
 
   function getMyAge() {
-    const today = new Date();
-    const todaysYear = today.getFullYear();
-    const myBirthday = new Date('apr 4 1989');
-    const myBirthyear = myBirthday.getFullYear();
-    const myBirthdayThisYear = new Date(myBirthday);
-    myBirthdayThisYear.setFullYear(todaysYear);
+    const today = new Date()
+    const todaysYear = today.getFullYear()
+    const myBirthday = new Date('apr 4 1989')
+    const myBirthyear = myBirthday.getFullYear()
+    const myBirthdayThisYear = new Date(myBirthday)
+    myBirthdayThisYear.setFullYear(todaysYear)
 
-    return todaysYear - myBirthyear - (today < myBirthdayThisYear ? 1 : 0);
+    return todaysYear - myBirthyear - (today < myBirthdayThisYear ? 1 : 0)
   }
 
   return (
@@ -61,12 +60,9 @@ function About() {
         height: '300px',
         tittleMarginBottom: '20px',
         tittlePadding: '20px',
-        children: (
-          <>
-            <h2 css={h1L}>Coding Towards a Better Tomorrow.</h2>
-          </>
-        ),
-      }}>
+        children: <h2 css={h1L}>Coding Towards a Better Tomorrow.</h2>,
+      }}
+    >
       <div css={container}>
         <Image
           fixed={data.imageOne.childImageSharp.fixed}
@@ -165,7 +161,7 @@ function About() {
    3)  need to add github link
   */}
     </Layout>
-  );
+  )
 }
 
-export default About;
+export default About

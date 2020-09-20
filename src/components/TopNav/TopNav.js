@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
-import { Link } from 'gatsby';
+import {jsx, css} from '@emotion/core'
+import {Link} from 'gatsby'
 
-import { colors, weights } from '../../styles';
+import {colors, weights} from '../../styles'
 
-export default () => {
+function TopNav() {
   const container = css`
     display: flex;
     justify-content: flex-start;
@@ -14,53 +14,59 @@ export default () => {
     padding: 0 88px;
     width: 100%;
     background: ${colors.aliceLightBlue};
-  `;
+  `
 
   const forLink = css`
     color: ${colors.independenceBlue};
     padding: 20px 50px;
     letter-spacing: 1px;
     font-weight: ${weights.bold};
-  `;
+  `
 
   return (
     <nav css={container}>
       <Link
-        to='/'
+        to="/"
         css={forLink}
         activeStyle={{
           background: colors.independenceBlue,
           color: colors.aliceLightBlue,
-        }}>
+        }}
+      >
         Home
       </Link>
       <Link
-        to='/skills/'
+        to="/skills/"
         css={forLink}
         activeStyle={{
           background: colors.independenceBlue,
           color: colors.aliceLightBlue,
-        }}>
+        }}
+      >
         Skills
       </Link>
       <Link
-        to='/projects/'
+        to="/projects/"
         css={forLink}
         activeStyle={{
           background: colors.independenceBlue,
           color: colors.aliceLightBlue,
-        }}>
+        }}
+      >
         Projects
       </Link>
       <Link
-        to='/about/'
+        to="/about/"
         css={forLink}
         activeStyle={{
           background: colors.independenceBlue,
           color: colors.aliceLightBlue,
-        }}>
+        }}
+      >
         About
       </Link>
     </nav>
-  );
-};
+  )
+}
+
+export default TopNav

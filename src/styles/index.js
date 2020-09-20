@@ -1,11 +1,5 @@
-export {
-  colors,
-  fonts,
-  weights,
-  mediaQueries,
-  jsBreakpoints,
-} from './css-utils';
-export { globalStyles } from './globalStyles';
+export {colors, fonts, weights, mediaQueries, jsBreakpoints} from './css-utils'
+export {globalStyles} from './globalStyles'
 export {
   btnStyles,
   h1Xl,
@@ -15,4 +9,4 @@ export {
   contentHeadings,
   dropCap,
   pLight,
-} from './custom-css';
+} from './custom-css'

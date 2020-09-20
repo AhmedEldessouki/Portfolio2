@@ -5,26 +5,36 @@
 
 ## 🚀 Quick start
 
- **Start developing.**
+**Start developing.**
+
 ```shell
 yarn dev
 ```
- **Build**
+
+**Build**
+
 ```shell
 yarn build
 ```
+
 **Test**
-1) Jest
+
+1. Jest
+
 ```shell
 yarn test
 ```
-2) cypress
+
+2. cypress
+
 ```shell
 yarn cy:run
 yarn cy:open
 ```
+
 **Pre-Commit**
+
 - Husky
 - Prettier
 - Eslint
-<!-- AUTO-GENERATED-CONTENT:END -->
+  <!-- AUTO-GENERATED-CONTENT:END -->

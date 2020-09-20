@@ -1,8 +1,6 @@
-/* eslint-disable import/prefer-default-export */
-// Global CSS Styles
-import { css } from '@emotion/core';
+import {css} from '@emotion/core'
 
-import { colors, fonts, weights, mediaQueries } from './css-utils';
+import {colors, fonts, weights, mediaQueries} from './css-utils'
 
 export const globalStyles = css`
   /*
@@ -651,4 +649,4 @@ export const globalStyles = css`
     -webkit-appearance: button;
     font: inherit;
   }
-`;
+`

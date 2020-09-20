@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import {useStaticQuery, graphql} from 'gatsby'
 
-const SEO = ({ description, lang, meta, keywords, title, image }) => {
-  const { site } = useStaticQuery(
+const SEO = ({description, lang, meta, keywords, title, image}) => {
+  const {site} = useStaticQuery(
     graphql`
       query {
         site {
@@ -15,16 +15,16 @@ const SEO = ({ description, lang, meta, keywords, title, image }) => {
           }
         }
       }
-    `
-  );
+    `,
+  )
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || site.siteMetadata.description
 
-  const defaultImage = `/images/icon.png`;
+  const defaultImage = `/images/icon.png`
 
-  const metaImage = image || defaultImage;
+  const metaImage = image || defaultImage
 
-  const imageWithFullpath = `https://Link${metaImage}`; // Still need to edit this later
+  const imageWithFullpath = `https://Link${metaImage}` // Still need to edit this later
 
   return (
     <Helmet
@@ -81,68 +81,69 @@ const SEO = ({ description, lang, meta, keywords, title, image }) => {
                 name: `keywords`,
                 content: keywords.join(`, `),
               }
-            : []
+            : [],
         )
-        .concat(meta)}>
+        .concat(meta)}
+    >
       <link
-        rel='preload'
-        href='/Fonts/Canela/Canela-Medium.woff2'
-        as='font'
-        crossOrigin='anonymous'
-        type='font/woff2'
+        rel="preload"
+        href="/Fonts/Canela/Canela-Medium.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
       />
       <link
-        rel='preload'
-        href='/Fonts/Canela/Canela-Thin.woff2'
-        as='font'
-        crossOrigin='anonymous'
-        type='font/woff2'
+        rel="preload"
+        href="/Fonts/Canela/Canela-Thin.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
       />
       <link
-        rel='preload'
-        href='/Fonts/Canela/Canela-Bold.woff2'
-        as='font'
-        crossOrigin='anonymous'
-        type='font/woff2'
+        rel="preload"
+        href="/Fonts/Canela/Canela-Bold.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
       />
       <link
-        rel='preload'
-        href='/Fonts/Canela/Canela-Black.woff2'
-        as='font'
-        crossOrigin='anonymous'
-        type='font/woff2'
+        rel="preload"
+        href="/Fonts/Canela/Canela-Black.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
       />
       <link
-        rel='preload'
-        href='/Fonts/Canela/Canela-BlackItalic.woff2'
-        as='font'
-        crossOrigin='anonymous'
-        type='font/woff2'
+        rel="preload"
+        href="/Fonts/Canela/Canela-BlackItalic.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
       />
       <link
-        rel='preload'
-        href='/Fonts/NBInternationalPro/NBInternationalProRegular.woff2'
-        as='font'
-        crossOrigin='anonymous'
-        type='font/woff2'
+        rel="preload"
+        href="/Fonts/NBInternationalPro/NBInternationalProRegular.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
       />
       <link
-        rel='preload'
-        href='/Fonts/NBInternationalPro/NBInternationalProLight.woff2'
-        as='font'
-        crossOrigin='anonymous'
-        type='font/woff2'
+        rel="preload"
+        href="/Fonts/NBInternationalPro/NBInternationalProLight.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
       />
       <link
-        rel='preload'
-        href='/Fonts/NBInternationalPro/NBInternationalProBold.woff2'
-        as='font'
-        crossOrigin='anonymous'
-        type='font/woff2'
+        rel="preload"
+        href="/Fonts/NBInternationalPro/NBInternationalProBold.woff2"
+        as="font"
+        crossOrigin="anonymous"
+        type="font/woff2"
       />
     </Helmet>
-  );
-};
+  )
+}
 
 SEO.defaultProps = {
   lang: `en`,
@@ -151,7 +152,7 @@ SEO.defaultProps = {
   description: ``,
   title: null,
   image: null,
-};
+}
 
 SEO.propTypes = {
   description: PropTypes.string,
@@ -160,6 +161,6 @@ SEO.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
   image: PropTypes.string,
-};
+}
 
-export default SEO;
+export default SEO
