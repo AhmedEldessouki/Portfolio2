@@ -9,7 +9,7 @@ import Layout from '../components/layout'
 function About() {
   const data = useStaticQuery(graphql`
     query {
-      imageOne: file(relativePath: {eq: "me.png"}) {
+      imageOne: file(relativePath: {eq: "Me.png"}) {
         childImageSharp {
           fixed(width: 250, height: 250) {
             ...GatsbyImageSharpFixed
