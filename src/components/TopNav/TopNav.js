@@ -6,7 +6,7 @@ import {Link} from 'gatsby'
 
 import {colors, weights} from '../../styles'
 
-export default () => {
+function TopNav() {
   const container = css`
     display: flex;
     justify-content: flex-start;
@@ -68,3 +68,5 @@ export default () => {
     </nav>
   )
 }
+
+export default TopNav

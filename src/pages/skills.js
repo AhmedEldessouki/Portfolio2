@@ -49,7 +49,7 @@ const skills = () => {
       </h1>
       <section css={wrapper}>
         {skillSet.map(({name}) => (
-          <FakeButton>{name}</FakeButton>
+          <FakeButton key={name}>{name}</FakeButton>
         ))}
       </section>
     </Layout>

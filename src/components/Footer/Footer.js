@@ -1,7 +1,7 @@
 import React from 'react'
 import {css} from '@emotion/core'
 
-export default () => {
+function Footer() {
   const footerContainer = css`
     display: block;
     position: relative;
@@ -17,3 +17,5 @@ export default () => {
     </div>
   )
 }
+
+export default Footer

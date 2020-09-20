@@ -38,9 +38,7 @@ const Header = ({
   invert,
 }) => {
   const isLightBackground = value => {
-    let r
-    let g
-    let b
+    let r, g, b
 
     if (value.match(/^rgb/)) {
       // if HEX, store the Red, Green, abd Blue values in separate variables

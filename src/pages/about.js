@@ -1,10 +1,9 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react'
 import {css} from '@emotion/core'
 import Image from 'gatsby-image'
 import {useStaticQuery, graphql} from 'gatsby'
 
-import {colors, mediaQueries, weights, h1L} from '../styles'
+import {mediaQueries, h1L} from '../styles'
 import Layout from '../components/layout'
 
 function About() {
@@ -61,11 +60,7 @@ function About() {
         height: '300px',
         tittleMarginBottom: '20px',
         tittlePadding: '20px',
-        children: (
-          <>
-            <h2 css={h1L}>Coding Towards a Better Tomorrow.</h2>
-          </>
-        ),
+        children: <h2 css={h1L}>Coding Towards a Better Tomorrow.</h2>,
       }}
     >
       <div css={container}>
