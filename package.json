@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.34",
     "@emotion/styled": "^10.0.27",
+    "@icons-pack/react-simple-icons": "^3.10.0",
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
     "gatsby": "^2.24.63",
