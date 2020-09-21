@@ -50,6 +50,7 @@ export const colors = {
   kindaBlue: `#337ab7`,
   kindaDarkBlue: `#23527c`,
   independenceBlue: `#3A405A`,
+  darkBlue: `#282c34`,
   red: `tomato`,
   burgundyRed: '#890620',
   gatsbyPurple: '#663399',

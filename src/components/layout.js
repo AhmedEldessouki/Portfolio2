@@ -12,13 +12,13 @@ import '../styles/layout.css'
 import {ContactMe} from './ContactMe/ContactMe'
 
 const Layout = ({children, headerData}) => (
-  <div>
+  <>
     <Global styles={globalStyles} />
     <Header {...headerData} />
     <main>{children}</main>
     <ContactMe />
     <Footer />
-  </div>
+  </>
 )
 
 Layout.propTypes = {

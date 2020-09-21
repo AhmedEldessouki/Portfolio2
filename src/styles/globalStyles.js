@@ -532,7 +532,12 @@ export const globalStyles = css`
     border: none;
     height: 1px;
   }
-
+  header,
+  body,
+  footer {
+    background: ${colors.darkBlue};
+    color: ${colors.whiteFaded};
+  }
   /*
    * Global Image Styles
    */

@@ -55,6 +55,7 @@ export function ContactMe() {
     <div
       css={css`
         max-width: 100%;
+        margin-bottom: 0;
         background-color: ${colors.independenceBlue};
       `}
     >
