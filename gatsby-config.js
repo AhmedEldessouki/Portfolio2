@@ -36,8 +36,8 @@ module.exports = {
         short_name: `Nemz`,
         start_url: `/`,
         lang: `en`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#3A405A`,
+        theme_color: `#282c34`,
         display: `minimal-ui`,
         icon: `static/images/me.png`, // This path is relative to the root of the site.
       },
