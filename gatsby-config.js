@@ -39,7 +39,38 @@ module.exports = {
         background_color: `#3A405A`,
         theme_color: `#282c34`,
         display: `minimal-ui`,
-        icon: `static/images/me.png`, // This path is relative to the root of the site.
+        icons: [
+          {
+            src: 'static/logo/a48x48.png',
+            sizes: '48x48',
+            type: 'png',
+          },
+          {
+            src: 'static/logo/a72x72.png',
+            sizes: '72x72',
+            type: 'png',
+          },
+          {
+            src: 'static/logo/a96x96.png',
+            sizes: '96x96',
+            type: 'png',
+          },
+          {
+            src: 'static/logo/a144x144.png',
+            sizes: '144x144',
+            type: 'png',
+          },
+          {
+            src: 'static/logo/a256x256.png',
+            sizes: '256x256',
+            type: 'png',
+          },
+          {
+            src: 'static/logo/a512x512.png',
+            sizes: '512x512',
+            type: 'png',
+          },
+        ], // This path is relative to the root of the site.
       },
     },
     // 'gatsby-plugin-manifest',
@@ -50,7 +81,7 @@ module.exports = {
       resolve: 'gatsby-plugin-offline',
       options: {
         workboxConfig: {
-          globPatterns: ['static/images/'], // my goes logo
+          globPatterns: ['images/'], // my goes logo
         },
       },
     },
