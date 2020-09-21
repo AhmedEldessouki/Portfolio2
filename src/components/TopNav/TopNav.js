@@ -13,11 +13,10 @@ function TopNav() {
     align-items: center;
     padding: 0 88px;
     width: 100%;
-    background: ${colors.aliceLightBlue};
   `
 
   const forLink = css`
-    color: ${colors.independenceBlue};
+    color: ${colors.whiteFaded};
     padding: 20px 50px;
     letter-spacing: 1px;
     font-weight: ${weights.bold};

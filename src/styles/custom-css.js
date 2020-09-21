@@ -255,8 +255,8 @@ export const wrapper = css`
   flex-wrap: wrap;
   place-content: center;
   min-height: 267px;
-  margin: 1% auto;
-  padding: 10px 50px 100px;
+  margin: 1% auto 0;
+  padding: 10px 50px 50px;
   ${mediaQueries.desktop} {
     flex-direction: column;
     flex-wrap: nowrap;
