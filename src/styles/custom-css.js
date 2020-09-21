@@ -104,6 +104,21 @@ export const h1L = css`
     width: 95%;
   }
 `
+export const h1M = css`
+  font-size: 77px;
+  font-family: serif;
+  font-weight: ${weights.black};
+  color: ${colors.whiteFaded};
+  padding-left: 25px;
+  padding-top: 25px;
+  line-height: 1.23;
+  letter-spacing: -0.45px;
+
+  ${mediaQueries.s} {
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+`
 
 export const smSectionHead = css`
   margin-bottom: 0;
@@ -207,5 +222,137 @@ export const list = css`
         padding-right: 2px;
       }
     }
+  }
+`
+export const btnStyle = css`
+  place-self: center;
+  background-color: ${colors.whiteFaded};
+  color: ${colors.independenceBlue};
+  font-family: serif;
+  font-weight: ${weights.black};
+  font-size: 174%;
+  width: 300px;
+  margin: 10px 50px;
+  height: 50px;
+  border-radius: 14%;
+  border: 0px;
+  transition: background-color, color 0.4s steps;
+  :hover,
+  :focus {
+    color: ${colors.whiteFaded};
+    background-color: ${colors.darkBlue};
+  }
+  ${mediaQueries.phoneLarge} {
+    transform: scale(0.9);
+  }
+  ${mediaQueries.s} {
+    transform: scale(0.7);
+  }
+`
+export const wrapper = css`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  place-content: center;
+  min-height: 267px;
+  margin: 1% auto;
+  padding: 10px 50px 100px;
+  ${mediaQueries.desktop} {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    place-items: center;
+  }
+  ${mediaQueries.s} {
+    padding: 1% 0;
+    margin: 0;
+  }
+`
+export const warning = css`
+  color: ${colors.red};
+  padding-left: 16px;
+  padding-bottom: 2px;
+`
+
+export const labelWrapper = css`
+  display: block;
+  width: calc(550px - 50px);
+  padding: 2px;
+  margin-right: 19px;
+  font-size: 1.4rem;
+
+  ${mediaQueries.desktop} {
+    width: calc(700px - 30px);
+    font-size: 2rem;
+  }
+  ${mediaQueries.phoneLarge} {
+    width: calc(407px - 30px);
+    font-size: 1.345rem;
+  }
+  ${mediaQueries.s} {
+    width: calc(310px - 25px);
+  }
+  ${mediaQueries.xs} {
+    width: calc(310px - 25px);
+  }
+`
+
+export const textArea = css`
+  width: inherit;
+  height: 100%;
+  padding: 8px;
+  padding-bottom: 0;
+  color: ${colors.aliceLightBlue};
+  border: 6px solid ${colors.whiteFaded};
+  border-radius: 7%;
+  background-color: transparent;
+  margin-left: 10px;
+  letter-spacing: 1.2px;
+
+  ${mediaQueries.desktop} {
+    margin-left: 0;
+    height: 188px;
+  }
+  ${mediaQueries.phoneLarge} {
+    height: 124px;
+  }
+`
+export const spinner = css`
+  @keyframes spinner {
+    0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+  }
+  animation: 1.5s linear infinite spinner;
+  animation-play-state: inherit;
+  border: solid 10px ${colors.aliceLightBlue};
+  border-bottom-color: ${colors.kindaBlue};
+  border-radius: 50%;
+  content: '';
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+`
+export const signWrapperInput = css`
+  padding: 19px 8px;
+  width: inherit;
+  height: 40px;
+  background-color: transparent;
+  color: ${colors.aliceLightBlue};
+  border: 5.5px solid ${colors.whiteFaded};
+  border-radius: 7%;
+  letter-spacing: 2.2px;
+  margin-bottom: 1.2px;
+  ${mediaQueries.desktop} {
+    height: 50px;
+  }
+  ${mediaQueries.phoneLarge} {
+    height: 30px;
   }
 `
