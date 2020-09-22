@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /** @jsx jsx */
 
 import {jsx, css} from '@emotion/core'
@@ -15,6 +16,12 @@ import {
   textArea,
   h1M,
 } from '../../styles'
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&')
+}
 
 export function ContactMe() {
   const [contactName, setContactName] = useState('')
@@ -41,8 +48,18 @@ export function ContactMe() {
   const handleSubmit = e => {
     e.preventDefault()
     setIsSubmitting(true)
-    // const arr = {contactName, email, phoneNumber, description}
-
+    const arr = {contactName, email, phoneNumber, description}
+    console.log(arr)
+    fetch('ahmedeldessouki-portfolio.netlify.app', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: encode({
+        'form-name': 'contactMe',
+        ...arr,
+      }),
+    })
+      .then(() => console.log('notif--success'))
+      .catch(error => console.log(error))
     setTimeout(() => {
       setPhoneNumber('')
       setEmail('')
@@ -64,6 +81,9 @@ export function ContactMe() {
         name="contactMe"
         onSubmit={handleSubmit}
         css={wrapper}
+        method="POST"
+        action="/thanks/"
+        netlify
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
