@@ -47,13 +47,10 @@ export function ContactMe() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    const form = e.target
-    console.log(e)
     setIsSubmitting(true)
     const arr = {contactName, email, phoneNumber, description}
     console.log(arr)
-    console.log(form.getAttribute('contactMe'))
-    fetch('/', {
+    fetch('ahmedeldessouki-portfolio.netlify.app', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: encode({
