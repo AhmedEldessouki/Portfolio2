@@ -86,6 +86,7 @@ export function ContactMe() {
         css={wrapper}
         method="POST"
         action="/thanks/"
+        netlify
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
