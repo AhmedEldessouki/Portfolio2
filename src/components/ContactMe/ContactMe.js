@@ -64,7 +64,6 @@ export function ContactMe() {
         name="contactMe"
         onSubmit={handleSubmit}
         css={wrapper}
-        netlify
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
@@ -187,7 +186,6 @@ export function ContactMe() {
             Submit
           </button>
         )}
-        {/* {contError ? <span css={warning}>{contError}</span> : null} */}
       </form>
     </div>
   )

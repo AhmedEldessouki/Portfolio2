@@ -7,7 +7,6 @@ const doc = require('rehype-document')
 const format = require('rehype-format')
 const html = require('rehype-stringify')
 const {error} = require('console')
-const {Json} = require('@icons-pack/react-simple-icons')
 const {username} = require('os').userInfo()
 
 function markdownToHtml(markdownString) {
@@ -92,7 +91,7 @@ async function handler(event) {
 
   return {
     statusCode: 200,
-    body: Json.statusCode({success: true}),
+    body: JSON.statusCode({success: true}),
     headers,
   }
 }
