@@ -64,8 +64,8 @@ export function ContactMe() {
         name="contactMe"
         onSubmit={handleSubmit}
         css={wrapper}
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        method="POST"
+        netlify
       >
         <input type="hidden" name="contactMe" value="contactMe" />
         <section>
