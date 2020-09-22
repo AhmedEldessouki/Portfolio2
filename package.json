@@ -23,13 +23,20 @@
     "gatsby-source-filesystem": "^2.3.30",
     "gatsby-transformer-sharp": "^2.5.15",
     "netlify-cms-app": "^2.12.24",
+    "nodemailer": "^6.4.11",
     "npm-quick-run": "^1.16.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-slick": "0.26",
-    "slick-carousel": "^1.8.1"
+    "rehype-document": "^5.1.0",
+    "rehype-format": "^3.1.0",
+    "rehype-stringify": "^8.0.0",
+    "remark-parse": "^8.0.3",
+    "remark-rehype": "^7.0.0",
+    "slick-carousel": "^1.8.1",
+    "unified": "^9.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.5",
