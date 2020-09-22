@@ -60,7 +60,14 @@ export function ContactMe() {
       `}
     >
       <h1 css={h1M}>Contact Me</h1>
-      <form id="ContactMe" onSubmit={handleSubmit} css={wrapper}>
+      <form
+        name="contactMe"
+        onSubmit={handleSubmit}
+        css={wrapper}
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="contactMe" value="contactMe" />
         <section>
           <label css={labelWrapper} htmlFor="contactName">
             <input
@@ -179,7 +186,6 @@ export function ContactMe() {
             Submit
           </button>
         )}
-        {/* {contError ? <span css={warning}>{contError}</span> : null} */}
       </form>
     </div>
   )
