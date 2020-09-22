@@ -17,12 +17,6 @@ import {
   h1M,
 } from '../../styles'
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&')
-}
-
 export function ContactMe() {
   const [contactName, setContactName] = useState('')
   const [email, setEmail] = useState('')
@@ -49,24 +43,15 @@ export function ContactMe() {
     e.preventDefault()
     setIsSubmitting(true)
     const arr = {contactName, email, phoneNumber, description}
-    console.log(arr)
-    fetch('ahmedeldessouki-portfolio.netlify.app', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: encode({
-        'form-name': 'contactMe',
-        ...arr,
-      }),
-    })
-      .then(() => console.log('notif--success'))
-      .catch(error => console.log(error))
+    setIsSubmitting(false)
     setTimeout(() => {
       setPhoneNumber('')
       setEmail('')
       setDescription('')
       setContactName('')
     }, 1000)
-    setIsSubmitting(false)
+    console.log(arr)
+    return arr
   }
   return (
     <div
