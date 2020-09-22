@@ -33,7 +33,7 @@ const transporter = nodemailer.createTransport({
 
 const headers = {
   'Access-Control-Allow_origin': '*',
-  'Access-Control-Allow-Headers': 'ContentMe',
+  'Access-Control-Allow-Headers': 'Content-Type',
 }
 
 async function handler(event) {

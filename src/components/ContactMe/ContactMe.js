@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /** @jsx jsx */
 
 import {jsx, css} from '@emotion/core'
@@ -15,6 +16,12 @@ import {
   textArea,
   h1M,
 } from '../../styles'
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&')
+}
 
 export function ContactMe() {
   const [contactName, setContactName] = useState('')
@@ -40,9 +47,22 @@ export function ContactMe() {
 
   const handleSubmit = e => {
     e.preventDefault()
+    const form = e.target
+    console.log(e)
     setIsSubmitting(true)
-    // const arr = {contactName, email, phoneNumber, description}
-
+    const arr = {contactName, email, phoneNumber, description}
+    console.log(arr)
+    console.log(form.getAttribute('contactMe'))
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: encode({
+        'form-name': 'contactMe',
+        ...arr,
+      }),
+    })
+      .then(() => console.log('notif--success'))
+      .catch(error => console.log(error))
     setTimeout(() => {
       setPhoneNumber('')
       setEmail('')
@@ -65,7 +85,9 @@ export function ContactMe() {
         onSubmit={handleSubmit}
         css={wrapper}
         method="POST"
-        netlify
+        action="/thanks/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
         <input type="hidden" name="contactMe" value="contactMe" />
         <section>
