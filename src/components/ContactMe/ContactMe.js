@@ -17,11 +17,6 @@ import {
   h1M,
 } from '../../styles'
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&')
-}
 export function ContactMe() {
   const [contactName, setContactName] = useState('')
   const [email, setEmail] = useState('')
@@ -48,19 +43,7 @@ export function ContactMe() {
     e.preventDefault()
     setIsSubmitting(true)
     const arr = {contactName, email, phoneNumber, description}
-    const form = e.target
-    try {
-      fetch('/', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: encode({
-          'form-name': form.getAttribute('name'),
-          ...arr,
-        }),
-      })
-    } catch (error) {
-      console.log(error)
-    }
+
     setIsSubmitting(false)
     setTimeout(() => {
       setPhoneNumber('')
@@ -84,7 +67,6 @@ export function ContactMe() {
         name="contactMe"
         onSubmit={handleSubmit}
         css={wrapper}
-        action="/thanks/"
         netlify
         data-netlify="true"
         method="post"
