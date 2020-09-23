@@ -17,12 +17,6 @@ import {
   h1M,
 } from '../../styles'
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&')
-}
-
 export function ContactMe() {
   const [contactName, setContactName] = useState('')
   const [email, setEmail] = useState('')
@@ -49,24 +43,16 @@ export function ContactMe() {
     e.preventDefault()
     setIsSubmitting(true)
     const arr = {contactName, email, phoneNumber, description}
-    console.log(arr)
-    fetch('ahmedeldessouki-portfolio.netlify.app', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: encode({
-        'form-name': 'contactMe',
-        ...arr,
-      }),
-    })
-      .then(() => console.log('notif--success'))
-      .catch(error => console.log(error))
+
+    setIsSubmitting(false)
     setTimeout(() => {
       setPhoneNumber('')
       setEmail('')
       setDescription('')
       setContactName('')
     }, 1000)
-    setIsSubmitting(false)
+    console.log(arr)
+    return arr
   }
   return (
     <div
@@ -81,13 +67,12 @@ export function ContactMe() {
         name="contactMe"
         onSubmit={handleSubmit}
         css={wrapper}
-        method="POST"
-        action="/thanks/"
         netlify
         data-netlify="true"
+        method="post"
         data-netlify-honeypot="bot-field"
       >
-        <input type="hidden" name="contactMe" value="contactMe" />
+        <input type="hidden" name="form-name" value="contactMe" />
         <section>
           <label css={labelWrapper} htmlFor="contactName">
             <input
